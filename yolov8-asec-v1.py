@@ -142,7 +142,7 @@ with tab_live_stream:
     
     col_details.text("test ======================== test")
     
-    frame_skip = 30
+    frame_skip = 60
     pop_up_flag = False
 
     FRAME_WINDOW = st.image([], width=1280)
@@ -171,12 +171,13 @@ with tab_live_stream:
                         break
 
                     image, result_list_json = image_processing(image, model, tracker=tracker)
-                    person_detected = [result for result in result_list_json if result.get('class') == 'truck' or result.get('class') == 'person']
+                    # person_detected = [result for result in result_list_json if result.get('class') == 'truck' or result.get('class') == 'person']
+                    person_detected = [result for result in result_list_json if result.get('class') == 'person']
 
                     print("frame_skip = ", frame_skip)
 
                     if person_detected and pop_up_flag == False:
-                        frame_skip = 15
+                        frame_skip = 30
                         pop_up_flag = True
                         col_run.button("ignore alert")
 

@@ -1,11 +1,11 @@
 version: "3.8"
 
 services:
-  yolov8:
+  cb-labs:
     build:
       context: .
       dockerfile: Dockerfile
-    image: yolov8
-    container_name: yolov8
+    image: cb-labs
+    container_name: cb-labs
     ports:
       - "80:8501"
