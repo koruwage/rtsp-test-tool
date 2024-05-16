@@ -24,13 +24,14 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+          email: ${{ secrets.DOCKERHUB_EMAIL }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
-          tags: hemanthafernando/cb-labs:latest
+          tags: hemanthafernando/cb-labs:v2.2
 
       - name: Log out from Docker Hub
         run: docker logout
