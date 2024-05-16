@@ -30,7 +30,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/hemanthafernando/cb-labs:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/cb-labs:latest
 
       - name: Log out from Docker Hub
         run: docker logout
