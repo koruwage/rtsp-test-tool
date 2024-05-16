@@ -1,6 +1,7 @@
 FROM python:3.9-slim-buster
 RUN apt update && \
-    apt install -y libsndfile1 ffmpeg libsm6 libxext6 libgl1 build-essential curl software-properties-common  && \
+    # apt install -y libsndfile1 ffmpeg libsm6 libxext6 libgl1 build-essential curl software-properties-common cmake  && \
+    apt install -y libgl1 build-essential curl software-properties-common && \
     apt clean
 
 WORKDIR /yolov8-docker
