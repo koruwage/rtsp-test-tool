@@ -33,14 +33,9 @@ jobs:
           push: true
           tags: hemanthafernando/cb-labs:latest
 
-      - name: Log out from Docker Hub
-        run: docker logout
-
-      # - name: Set up kubectl
-      #   run: |
-      #     mkdir -p $HOME/.kube
-      #     echo "${{ secrets.KUBECONFIG }}" | base64 -d > $HOME/.kube/config
-
       - name: Update Kubernetes deployment
         run: |
           kubectl set image deployment/cb-labs cb-labs=hemanthafernando/cb-labs:latest
+
+      - name: Log out from Docker Hub
+        run: docker logout
