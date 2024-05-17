@@ -31,7 +31,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: hemanthafernando/cb-labs:v2.2
+          tags: hemanthafernando/cb-labs:latest
 
       - name: Log out from Docker Hub
         run: docker logout

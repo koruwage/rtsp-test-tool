@@ -37,6 +37,8 @@ with tab_live_stream:
     #    CAM_ID = int(CAM_ID)
     
     CAM_ID = "rtsp://admin4str:admin4pass@192.168.1.134:554/stream1"
+
+    print(CAM_ID)
     
     col_run, col_details = st.columns(2)
     run = col_run.button("Click to Start Live Stream Processing")
@@ -48,6 +50,7 @@ with tab_live_stream:
 
     FRAME_WINDOW = st.image([], width=1280)
 
+    print(type(FRAME_WINDOW))
 
     if run:
         print("inside run")
