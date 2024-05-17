@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: k8-deploy
+    runs-on: k8-deployments
 
     steps:
       - name: Checkout code
