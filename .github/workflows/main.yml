@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: k8-deploy
 
     steps:
       - name: Checkout code
