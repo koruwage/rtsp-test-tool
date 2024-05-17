@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
@@ -36,10 +36,10 @@ jobs:
       - name: Log out from Docker Hub
         run: docker logout
 
-      - name: Set up kubectl
-        run: |
-          mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBECONFIG }}" | base64 -d > $HOME/.kube/config
+      # - name: Set up kubectl
+      #   run: |
+      #     mkdir -p $HOME/.kube
+      #     echo "${{ secrets.KUBECONFIG }}" | base64 -d > $HOME/.kube/config
 
       - name: Update Kubernetes deployment
         run: |
