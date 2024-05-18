@@ -78,7 +78,7 @@ with tab_live_stream:
                     # person_detected = [result for result in result_list_json if result.get('class') == 'truck' or result.get('class') == 'person']
                     # person_detected = [result for result in result_list_json if result.get('class') == 'person']
 
-                    print("frame_skip = ", frame_skip)
+                    # print("frame_skip = ", frame_skip)
 
                     # if person_detected and pop_up_flag == False:
                     #     frame_skip = 30

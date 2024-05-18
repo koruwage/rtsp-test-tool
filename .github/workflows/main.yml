@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: k8-deployments
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -32,10 +32,6 @@ jobs:
           context: .
           push: true
           tags: hemanthafernando/cb-labs:latest
-
-      - name: Update Kubernetes deployment
-        run: |
-          kubectl set image deployment/cb-labs cb-labs=hemanthafernando/cb-labs:latest
 
       - name: Log out from Docker Hub
         run: docker logout
