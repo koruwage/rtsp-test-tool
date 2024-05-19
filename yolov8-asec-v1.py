@@ -38,12 +38,16 @@ with tab_live_stream:
     
     CAM_ID = "rtsp://admin4str:admin4pass@192.168.1.134:554/stream1"
 
-    print(CAM_ID)
+    #print(CAM_ID)
     
-    col_run, col_details = st.columns(2)
+    col_run, col_details, col_test = st.columns(3)
     run = col_run.button("Click to Start Live Stream Processing")
-    
-    col_details.text("test ======================== test")
+    col_details.text("test data -TBC")
+    test = col_test.button("connection testing to the camera feed")
+
+    if test:
+        print(CAM_ID)
+        
     
     frame_skip = 60
     pop_up_flag = False
