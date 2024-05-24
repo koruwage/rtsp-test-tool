@@ -14,4 +14,5 @@ EXPOSE 8501
 
 HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
 
-ENTRYPOINT [ "streamlit", "run", "yolov8-asec-v1.py", "--server.port=8501", "--server.address=0.0.0.0" ]
+#ENTRYPOINT [ "streamlit", "run", "yolov8-asec-v1.py", "--server.port=8501", "--server.address=0.0.0.0" ]
+ENTRYPOINT [ "streamlit", "run", "camera-feed.py", "--server.port=8501", "--server.address=0.0.0.0" ]
