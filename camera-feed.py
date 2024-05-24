@@ -1,7 +1,6 @@
 import cv2
 import streamlit as st
 
-#// a simple camera feed using OpenCV and Streamlit see the feed on the browser
 def main():
     # Create a VideoCapture object to read from the camera
     cap = cv2.VideoCapture("rtsp://admin4str:admin4pass@192.168.1.134:554/stream1")
