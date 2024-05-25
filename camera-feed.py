@@ -8,6 +8,7 @@ import time
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 ip_address_38_front = '192.168.1.134'
+frame_skip = 15
 
 
 def ping_ip(ip_address):
@@ -46,7 +47,7 @@ def main():
 
         # RTSP_SERVICE = st.text_input("192.168.1.134:554")
         # RTSP_STRING = "rtsp://admin4str:admin4pass@{RTSP_SERVICE}/stream1"
-        ping_ip(ip_address)
+        # ping_ip(ip_address)
 
         #CAM_ID = st.button("rtsp://admin4str:admin4pass@{ip_address_38_front}:554/stream1")
         
@@ -73,19 +74,36 @@ def main():
         video_placeholder = st.empty()
 
         # Read and display frames from the camera
+        i = 0
         while True:
             # Read a frame from the camera
             ret, frame = cap.read()
 
-            # logging.error("test message")
-            # Check if the frame was successfully read
-            if not ret:
-                st.error("Failed to read frame from camera")
-                logging.error("Failed to read frame from camera")
-                break
+            if ret:
+                i += 1
+                if i < frame_skip:
+                    #print("frame skiped = ", i, "/", frame_skip )                
+                    pass
+                else:
+                    i = 0
+                    # log current time stream
+                    
+                    # current_time = time.time()
+                    # local_time = time.localtime(current_time) 
+                    # formatted_time = time.strftime("%Y-%m-%d %H:%M:%S", local_time)
+                    # print(f"Current Time: {formatted_time}")
+                    
+                    print("frame dispaced = ", i, "/", frame_skip )
+                    
+                    # Check if the frame was successfully read
 
-            # Display the frame in the Streamlit window
-            video_placeholder.image(frame, channels="BGR")
+                    if not ret:
+                        st.error("Failed to read frame from camera")
+                        logging.error("Failed to read frame from camera")
+                        break
+
+                    # Display the frame in the Streamlit window
+                    video_placeholder.image(frame, channels="BGR")
 
         # Release the VideoCapture object and close the Streamlit window
         cap.release()
