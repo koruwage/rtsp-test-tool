@@ -28,13 +28,13 @@ def main():
     
 
 
-    logging.error("initial loading up the app")
+    logging.error("initial loading up to show geenuka 111")
 
     # Create text input boxes for the IP address and port
     ip_address = st.text_input("Enter the IP address of the camera:", "192.168.1.134")
     port = st.text_input("Enter the port of the camera:", "554")
     rtsp_service = st.text_input("Enter the service of the camera:", "192.168.1.134:554")
-
+    frame_skip = st.text_input("Enter the frame skip:", "15")
 
     CAM_ID = st.button("confirm ip address")
     #if st.button("Confirm IP address"):
@@ -43,7 +43,7 @@ def main():
         # rtsp_service = f"{ip_address}:{port}"
         rtsp_string = f"rtsp://admin4str:admin4pass@{rtsp_service}/stream1"
 
-        logging.error(rtsp_string, " <= rtsp string")
+        #logging.error(rtsp_string, " <= rtsp string")
 
         # RTSP_SERVICE = st.text_input("192.168.1.134:554")
         # RTSP_STRING = "rtsp://admin4str:admin4pass@{RTSP_SERVICE}/stream1"
@@ -81,7 +81,7 @@ def main():
 
             if ret:
                 i += 1
-                if i < frame_skip:
+                if i < int(frame_skip):
                     #print("frame skiped = ", i, "/", frame_skip )                
                     pass
                 else:
@@ -93,7 +93,7 @@ def main():
                     # formatted_time = time.strftime("%Y-%m-%d %H:%M:%S", local_time)
                     # print(f"Current Time: {formatted_time}")
                     
-                    print("frame dispaced = ", i, "/", frame_skip )
+                    # print("frame dispaced = ", i, "/", frame_skip )
                     
                     # Check if the frame was successfully read
 
