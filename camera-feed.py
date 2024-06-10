@@ -21,8 +21,8 @@ def main():
     ip_address = st.text_input("Enter the IP address of the camera:", "192.168.1.134")
     port = st.text_input("Enter the port of the camera:", "554")
     #rtsp_service = st.text_input("Enter the service of the camera:", "192.168.1.134:554")
-    auth_user = st.text_input("Enter rtsp username:", "admin4str")
-    auth_password = st.text_input("Enter rtsp password:", "admin4pass")
+    auth_user = st.text_input("Enter rtsp username:", "####")
+    auth_password = st.text_input("Enter rtsp password:", "####")
     frame_skip = st.text_input("Enter number of frames to skip:", "15")
 
     CAM_ID = st.button("confirm")
